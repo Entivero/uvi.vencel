@@ -3,7 +3,7 @@ import style from "./Form.module.css";
 import logo from "../../assets/logo1.png";
 import { TiSocialLinkedinCircular, TiMail } from "react-icons/ti";
 
-async function addCliente(){
+async function getCliente(){
   const res = await axios.get('http://localhost/apirest/');
   setLista(res.data)
   console.log(res.data)
@@ -12,7 +12,7 @@ async function addCliente(){
 async function addCliente(e) {
   e.preventDefault();
   const obj = {nombre,apellido, telefono, correo, mensaje};
-  const res = await axion.post('http://localhost/apirest/', obj);
+  const res = await axios.post('http://localhost/apirest/', obj);
   getCliente();
   console.log(res)
 }
